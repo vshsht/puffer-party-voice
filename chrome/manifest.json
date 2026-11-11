@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Voice input for Puffer Party (unofficial)",
+  "short_name": "Puffer Party Voice",
+  "version": "1.1.0",
+  "description": "Say your answers in Krillion's Puffer Party instead of typing them. Unofficial; not affiliated with Krillion.",
+  "homepage_url": "https://github.com/vshsht/puffer-party-voice",
+  "icons": { "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["https://krillion.io/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

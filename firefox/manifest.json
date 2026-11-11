@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Voice input for Puffer Party (unofficial)",
+  "short_name": "Puffer Party Voice",
+  "version": "1.1.0",
+  "description": "Say your answers in Krillion's Puffer Party instead of typing them. Speech is recognized on your computer. Unofficial; not affiliated with Krillion.",
+  "homepage_url": "https://github.com/vshsht/puffer-party-voice",
+  "icons": { "128": "icon128.png" },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "puffer-party-voice@vshsht.github.io",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["https://krillion.io/*"],
+      "js": ["speech-vosk.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": ["engine.html"]
+}

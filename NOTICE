@@ -1,0 +1,23 @@
+Voice input for Puffer Party (unofficial)
+Copyright (c) 2026 vshsht. Our own code is under the MIT License (see LICENSE).
+
+This is an unofficial project. It is not affiliated with, endorsed by or
+sponsored by Krillion. "Krillion" and "Puffer Party" are names of their owner,
+used here only to say which game this extension works with.
+
+The Firefox build includes the following third-party software, unmodified
+except where noted. Both are licensed under the Apache License, Version 2.0
+(https://www.apache.org/licenses/LICENSE-2.0).
+
+1. vosk-browser 0.0.8 (vosk.js)
+   https://github.com/ccoreilly/vosk-browser
+   https://www.npmjs.com/package/vosk-browser/v/0.0.8
+   Includes Vosk (https://github.com/alphacep/vosk-api) and Kaldi
+   (https://github.com/kaldi-asr/kaldi), compiled to WebAssembly.
+   Modified: vosk.js embeds its Web Worker as base64. tools/extract_worker.py
+   saves that worker as vosk-worker.js, decoded exactly as vosk.js would, and
+   empties the now-unused base64 string in vosk.js. Nothing else is changed.
+
+2. Vosk small English model 0.15 (model.tar.gz)
+   https://alphacephei.com/vosk/models
+   Downloaded from https://ccoreilly.github.io/vosk-browser/models/vosk-model-small-en-us-0.15.tar.gz
